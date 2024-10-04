@@ -1,0 +1,870 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Resume</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <!-- FontAwesome for Icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+
+    <!-- Dancing script font link-->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Pacifico&family=Great+Vibes&family=Lobster&display=swap"
+        rel="stylesheet">
+
+    <!--Other google fonts link-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playwrite+DE+Grund:wght@100..400&display=swap"
+        rel="stylesheet">
+
+    <style>
+        /* Global Styles */
+        body {
+            margin: 0;
+            padding: 0;
+            scroll-behavior: smooth;
+            background-color: rgb(250, 179, 190);
+            font-family: "Playwrite DE Grund", cursive;
+            font-optical-sizing: auto;
+            font-style: normal;
+        }
+
+        .name-font {
+            font-family: 'Dancing Script', cursive;
+            font-size: 90px;
+            color: #000;
+            margin-left: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #000;
+            margin-bottom: 30px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            font-family: 'Great Vibes', cursive;
+            margin-left: 20px;
+        }
+
+        h2 {
+            font-family: 'Lobster', cursive;
+            letter-spacing: 1px;
+            color: #000;
+            text-align: center;
+        }
+
+        h3 {
+            font-family: 'Pacifico', cursive;
+            letter-spacing: 1px;
+            color: #000;
+            text-align: center;
+        }
+
+        p,
+        form {
+            font-size: 18px;
+            color: #000;
+            line-height: 1.6;
+        }
+
+        /* Navigation Styles */
+        nav {
+            position: fixed;
+            width: 250px;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            background-color: #000;
+            color: #ffd700;
+            padding-top: 50px;
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        nav ul li {
+            margin: 20px 0;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 18px;
+            padding: 10px;
+            display: block;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        nav ul li a:hover {
+            background-color: #ffd700;
+            color: #000;
+            transform: translateY(5px);
+        }
+
+        /* Hero Section */
+        #hero {
+            height: auto;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding-top: 100px;
+            margin-left: 250px;
+        }
+
+        .hero-section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .hero-image {
+            width: 70%;
+            height: auto;
+            border-radius: 50%;
+            padding: auto;
+            margin: auto;
+            opacity: 0;
+            transition: opacity 1s ease-in-out 0.75s;
+        }
+
+        .hero-text {
+            margin-top: 20px;
+            opacity: 0;
+            transition: opacity 1s ease-in-out 1s;
+        }
+
+        .hero-text .name-font,
+        .hero-text h1 {
+            font-size: 60px;
+            margin: auto;
+            position: relative;
+        }
+
+        .hero-section.loaded .hero-image {
+            opacity: 1;
+        }
+
+        .hero-section.loaded .hero-text {
+            opacity: 1;
+        }
+
+        /* Main Content Styles */
+        .content-section {
+            min-height: 100vh;
+            padding: 60px 20px;
+            margin: 20px auto;
+            background: linear-gradient(to bottom, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.7));
+            border-radius: 5rem;
+            box-shadow: 0.1rem 0.4rem 0.5rem rgba(0, 0, 0, 0.1);
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 0.5s ease;
+            width: 75%;
+            max-width: 1200px;
+            overflow-x: auto;
+            margin-left: 250px;
+            display: block;
+        }
+
+        .content-section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Form and Buttons */
+        .form-control {
+            background-color: #fff;
+            color: #000;
+            border: 0.1rem solid #000;
+            border-radius: 0.5rem;
+            padding: 0.75rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .btn-primary {
+            background-color: #000;
+            border: none;
+            color: #ffd700;
+            padding: 0.75rem 1.5rem;
+            font-size: 0.9rem;
+            border-radius: 0.5rem;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        .btn-primary:hover {
+            background-color: #ffd700;
+            color: #000;
+        }
+
+        /* Footer Styles */
+        footer {
+            background-color: #000;
+            color: #fff;
+            padding: 0.75rem;
+            text-align: center;
+            position: relative;
+            width: 100%;
+            bottom: 0%;
+        }
+
+        footer a {
+            color: #ffd700;
+            text-decoration: none;
+            margin: 0 10px;
+            transition: color 0.3s;
+        }
+
+        footer a:hover {
+            color: #fff;
+        }
+
+        footer p {
+            color: white;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1200px) {
+
+            .content-section {
+                margin-left: 0;
+                width: 100%;
+            }
+
+            nav {
+                width: 100%;
+                height: auto;
+                position: fixed;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                display: flex;
+                justify-content: space-between;
+                padding: 10px;
+                box-shadow: none;
+            }
+
+            nav ul {
+                display: flex;
+                justify-content: space-around;
+                flex-direction: row;
+                align-items: center;
+                margin-right: auto;
+            }
+
+            nav ul li {
+                display: inline-block;
+                margin: 0px;
+                margin-right: auto;
+            }
+
+            #hero {
+                margin-left: 0;
+            }
+
+            .content-section {
+                margin-top: 20%;
+                margin-right: auto;
+                margin-left: auto;
+                padding: 20px;
+                width: 100%;
+                align-items: center;
+                display: flex;
+                justify-content: center;
+            }
+
+            footer {
+                margin: 0;
+                width: 100%;
+            }
+        }
+
+        @media (max-width: 992px) {
+            nav {
+                flex-direction: column;
+                padding: auto;
+                margin-bottom: auto;
+                height: 15%;
+            }
+
+            nav ul li {
+                display: inline-block;
+                font-size: auto;
+            }
+
+            .name-font {
+                font-size: 50px;
+            }
+
+            .content-section {
+                padding: 20px;
+                margin-top: 20%;
+                width: 100%;
+            }
+
+            footer {
+                width: 100%;
+            }
+
+            .hero-text .name-font,
+            .hero-text h1 {
+                font-size: 5;
+            }
+        }
+
+        @media (max-width: 768px) {
+
+            .hero-text {
+        margin-top: 20px;
+        opacity: 0;
+        transition: opacity 1s ease-in-out 1s;
+    }
+
+            .hero-section img {
+                width: 90%;
+                height: auto;
+                border-radius: 50%;
+                padding: auto;
+                margin: auto;
+                transition: transform 1s ease-in-out;
+            }
+
+            .text {
+                position: absolute;
+                text-align: center;
+                margin: auto;
+            }
+
+            .text .name-font,
+            .text h1 {
+                font-size: 40px;
+                opacity: 0;
+                transition: opacity 1s ease-in-out 1.2s;
+                margin: auto;
+                position: relative;
+            }
+
+            .content-section {
+                padding: 20px;
+                margin-top: 20%;
+                width: 100%;
+            }
+
+            .qualifications-div {
+                column-count: 1;
+            }
+
+            .experience-div {
+                column-count: 1;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .hero-section img {
+                width: 90%;
+                height: auto;
+                border-radius: 50%;
+                padding: auto;
+                margin: auto;
+                transition: transform 1s ease-in-out;
+            }
+
+            .text {
+                position: absolute;
+                text-align: center;
+                margin: auto;
+            }
+
+            .text .name-font,
+            .text h1 {
+                font-size: 30px;
+                opacity: 0;
+                transition: opacity 1s ease-in-out 1.2s;
+                margin: auto;
+                position: relative;
+            }
+
+            .content-section {
+                padding: 20px;
+                margin-top: 20%;
+                width: 100%;
+            }
+
+            .qualifications-div {
+                column-count: 1;
+            }
+
+            .experience-div {
+                column-count: 1;
+            }
+
+        }
+
+        .news-img {
+            text-align: center;
+        }
+
+        .news-img img {
+            border-radius: 15rem;
+            margin-bottom: 5%;
+        }
+
+        .qualifications-section{
+            padding: auto;
+        }
+
+        .qualifications-container {
+            max-width: 960px;
+        }
+
+        .qualifications-div {
+            column-count: 3;
+            column-gap: 20px;
+            background: #fff;
+            border-radius: 15px;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .article {
+            break-inside: avoid;
+            margin-bottom: 20px;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            transition: transform 0.3s;
+        }
+
+        .article:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .article-content {
+            display: none;
+            margin-top: 10px;
+        }
+
+        /* Experience Section Styles */
+        .experience-section {
+            /* Add your overall section styling here */
+            padding: auto;
+        }
+
+        .experience-container {
+            max-width: 960px;
+            /* Adjust the width as needed */
+        }
+
+        .experience-div {
+            column-count: 2;
+            /* Adjust the number of columns as needed */
+            column-gap: 20px;
+            background: #fff;
+            border-radius: 15px;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .volunteer-item,
+        .writer-item {
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin-bottom: 20px;
+        }
+
+        .volunteer-item h4,
+        .writer-item h4 {
+            font-weight: bold;
+        }
+
+        .volunteer-item img,
+        .writer-item img {
+            width: 100%;
+            height: auto;
+            margin-bottom: 10px;
+        }
+
+        #about,
+        #skills,
+        #contact,
+        #hero,
+        #qualifications,
+        #experience {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav>
+        <h5>Welcome to my resume</h5>
+        <ul>
+            <li><a href="#hero">Home</a></li>
+            <li><a href="#about">About Me</a></li>
+            <li><a href="#qualifications">Qualifications</a></li>
+            <li><a href="#skills">Skills/Hobbies</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <!-- <li><a href="#projects">Projects</a></li> -->
+            <li><a href="#contact">Contact Me</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="hero">
+        <div class="hero-section">
+            <div class="my-image">
+                <img src="/resume_page/astleImage.jpg" alt="Astle's Image" class="hero-image">
+            </div>
+
+            <div class="text hero-text">
+                <span class="name-font">
+                    Astle Dsilva
+                </span>
+                <h1 style="font-size: 60px;"> Web Designer & Developer</h1>
+            </div>
+        </div>
+    </section>
+
+    <!--Main content section-->
+    <div class="container-fluid">
+        <div class="row">
+            <!-- About Me Section -->
+            <section id="about" class="content-section">
+                <h2>About Me</h2>
+                <p>Welcome to my resume page! I am a web designer with expertise in various technologies.</p>
+                <p>Hello, I am Astle Dsilva, a student from St. Xavier's College, Mumbai.</p>
+                <p>Here you can find out more about me, my academic background, my hobbies, and my projects and
+                    experience.</p>
+                <p>I am a dedicated and passionate student with a strong interest in information technology. I am
+                    currently pursuing a Bachelor's degree in Information Technology at St. Xavier's College, with a
+                    minor in Business Management Studies. My academic journey has been marked by a strong foundation in
+                    programming, software development, and problem-solving.</p>
+                <ul>
+                    <li>I am always eager to learn new things and stay updated with the latest advancements in the field
+                        of information technology.</li>
+                    <li>I believe that continuous learning is essential for professional growth and staying competitive
+                        in today's rapidly evolving technological landscape.</li>
+                    <li>I am excited to leverage my skills and knowledge to contribute to innovative projects and make a
+                        positive impact in the world of technology.</li>
+                    <li>I am open to exploring new opportunities and collaborating with like-minded individuals who
+                        share my passion for technology and innovation.</li>
+                </ul>
+                <p>I am currently in Sy-BSc-IT, with a minor degree in BMS, open to internships and learning
+                    opportunities.</p>
+            </section>
+
+            <!-- Qualifications Section -->
+            <section id="qualifications" class="content-section">
+                <h2>Qualifications</h2>
+                <div class="container qualifications-container">
+                    <h1 class="text-center my-4">My Education Qualifications</h1>
+                    <div class="qualifications-div">
+                        <div class="article">
+                            <h2>SSC Qualifications Details:</h2>
+                            <p><b>My SSC Qualifications Are As Follows: </b></p>
+                            <div class="article-content">
+                                <img src="/resume_page/stJoesphsImage.jpeg" alt="St.Joseph's School image" width="100%"
+                                    height="100%" style="border-radius: 10%;">
+                                <p><br><b>St.Joseph's High School</b><br><b>Passing year:</b> 2020-2021
+                                    <br><b>Percentage:</b> 82%
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="article">
+                            <h2>HSC Qualifications Details:</h2>
+                            <p><b>My HSC Qualifications Are As Follows:</b></p>
+                            <div class="article-content">
+                                <img src="/resume_page/stXaviersLogo.png" alt="St.Xavier's logo" width="60%"
+                                    height="60%" style="text-align: center; justify-content: center; ">
+                                <p><br>
+                                    <b>St.Xavier's College</b><br><b>Passing year:</b> 2022-2023
+                                    <br><b>Percentage:</b> 69%
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="article">
+                            <h2>Degree Qualifications Details:</h2>
+                            <p><b>My Degree Qualifications Are As Follows:</b>
+                            </p>
+                            <div class="article-content">
+                                <img src="/resume_page/stXaviersLogo.png" alt="St.Xavier's logo" width="60%"
+                                    height="60%">
+                                <p><br><b>St.Xavier's College</b><br><b>Degree:</b>BSc-IT<br><b>CGPA:</b> 8.67</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Skills Section -->
+            <section id="skills" class="content-section">
+                <h2>Skills/Hobbies</h2>
+                <h4>I know the following programming languages:</h4>
+                <p><i class="fas fa-code"></i> HTML, CSS, JavaScript, Bootstrap, jQuery, XML, PHP, AJAX, Python, C, C++,
+                    R, MsSQL
+                    & Java</p>
+                <h2>My Hobbies</h2>
+                <p>I enjoy doing various activities in my free time. Here are some of my hobbies:</p>
+                <ul>
+                    <li>Playing Cricket</li>
+                    <li>Watching movies and TV shows</li>
+                    <li>Playing Chess</li>
+                    <li>Listening to music/podcast</li>
+                    <li>Traveling and exploring new places</li>
+                    <li>Doing exercise/workout to keep myself fit</li>
+                </ul>
+                <img src="/resume_page/hobbies image.jpg" alt="My hobbies" width="500" height="300"
+                    style="width: 70%; height: auto ; border-radius: 50%; text-align: center;">
+            </section>
+
+            <!-- Experience Section -->
+            <section id="experience" class="content-section">
+                <h2>Experience</h2>
+                <div class="container experience-container">
+                    <h1 class="text-center my-4">My Experience</h1>
+                    <div class="experience-div">
+                        <div class="article">
+                            <h2>Volunteer Experiences</h2>
+                            <div class="article-content">
+                                <div class="volunteer-item">
+                                    <h4>TechStatic</h4>
+                                    <p>A technical fest organized by the IT department of BIT.</p>
+                                    <img src="techstatic_image.jpg" alt="TechStatic image">
+                                    <p>Contributed to the organization of the fest, managed logistics, and assisted in
+                                        technical events.</p>
+                                </div>
+                                <div class="volunteer-item">
+                                    <h4>Ithaka</h4>
+                                    <p>A cultural fest organized by the cultural committee of BIT.</p>
+                                    <img src="ithaka_image.jpg" alt="Ithaka image">
+                                    <p>Participated in various cultural events, such as dance, music, and drama.</p>
+                                </div>
+                                <div class="volunteer-item">
+                                    <h4>Sitare</h4>
+                                    <p>A literary fest organized by the literary committee of BIT.</p>
+                                    <img src="sitare_image.jpg" alt="Sitare image">
+                                    <p>Participated in literary events, such as poetry readings, debates, and writing
+                                        workshops.</p>
+                                </div>
+                                <div class="volunteer-item">
+                                    <h4>Malhar</h4>
+                                    <p>A sports fest organized by the sports committee of BIT.</p>
+                                    <img src="malhar_image.jpg" alt="Malhar image">
+                                    <p>Participated in various sports events, such as cricket, football, and basketball.
+                                    </p>
+                                </div>
+                                <div class="volunteer-item">
+                                    <h4>The Business Conference</h4>
+                                    <p>A business conference organized by the management department of BIT.</p>
+                                    <img src="business_conference_image.jpg" alt="Business Conference image">
+                                    <p>Participated in various business-related activities, such as case studies and
+                                        presentations.</p>
+                                </div>
+                                <div class="volunteer-item">
+                                    <h4>ECC</h4>
+                                    <p>An extra-curicular committee which organizes various workshops for students
+                                        welfare.
+                                    </p>
+                                    <img src="ecc_image.jpg" alt="ECC image">
+                                    <p>Participated in entrepreneurship development programs and workshops.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="article">
+                            <h2>Writer Experience</h2>
+                            <div class="article-content">
+                                <div class="writer-item">
+                                    <h4>BITMAP</h4>
+                                    <p>Contributed articles to the IT department's magazine.</p>
+                                    <img src="bitmap_image.jpg" alt="BITMAP image">
+                                    <p>Wrote articles on various topics related to technology and computer science.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Contact Section -->
+            <section id="contact" class="content-section">
+                <h2>Contact Me</h2>
+                <form method="POST" action="contact.php" onsubmit="return validateForm();">
+                    <div class="form-group">
+                        <label for="name">Name:</label>
+                        <input type="text" id="name" name="name" class="form-control" required
+                            placeholder="Enter Your Name">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="email" class="form-control" required
+                            placeholder="Enter Your Email ID">
+                    </div>
+                    <div class="form-group">
+                        <label for="contactNumber">Contact Number:</label>
+                        <input type="text" id="contactNumber" name="contactNumber" class="form-control" required
+                            placeholder="Enter Your Contact Number">
+                    </div>
+                    <div class="form-group">
+                        <label for="likedSection">Which section did you like the most?</label>
+                        <select id="likedSection" name="likedSection" class="form-control" required>
+                            <option value="">Select a section</option>
+                            <option value="About Me">About Me</option>
+                            <option value="Qualifications">Qualifications</option>
+                            <option value="Skills/Hobbies">Skills/Hobbies</option>
+                            <option value="Experience">Experience</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="improvementSection">Which section needs improvement?</label>
+                        <select id="improvementSection" name="improvementSection" class="form-control" required>
+                            <option value="">Select a section</option>
+                            <option value="About Me">About Me</option>
+                            <option value="Qualifications">Qualifications</option>
+                            <option value="Skills/Hobbies">Skills/Hobbies</option>
+                            <option value="Experience">Experience</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="likedSectionComment">Comments about the liked section:</label>
+                        <textarea id="likedSectionComment" name="likedSectionComment" class="form-control"
+                            required></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="improvementSectionComment"> Comments about the improvement section:</label>
+                        <textarea id="improvementSectionComment" name="improvementSectionComment" class="form-control"
+                            required></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="rating">Rating (0-5 stars):</label>
+                        <input type="number" id="rating" name="rating" class="form-control" required min="0" max="5">
+                    </div>
+                    <button type="submit" class="btn btn-primary">Send Message</button>
+                </form>
+            </section>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p style="color: #FFD43B;">&copy; <sub>&tilde;</sub>Astle Dsilva. All Rights Reserved. <br></p>
+        <p style="color: #FFD43B;">
+            <i class="fa fa-envelope" style="color: #FFD43B;"></i> astle.dsilva@xaviers.edu.in
+            <a href="https://linkedin.com/in/yourprofile" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a> |
+            <a href="https://github.com/yourprofile" target="_blank"><i class="fab fa-github"></i> GitHub</a> |
+            <a href="https://instagram.com/yourprofile" target="_blank"><i class="fab fa-instagram fa-sm"
+                    style="color: #FFD43B;"></i> Instagram</a>
+        </p>
+    </footer>
+
+    <!-- JavaScript for animations -->
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+    <script>
+        document.addEventListener('scroll', function () {
+            var sections = document.querySelectorAll('.content-section');
+            sections.forEach(section => {
+                var rect = section.getBoundingClientRect();
+                if (rect.top < window.innerHeight && rect.bottom >= 0) {
+                    section.classList.add('visible');
+                }
+            });
+        });
+
+        $(document).ready(function () {
+            $('.article').click(function () {
+                $(this).find('.article-content').slideToggle('fast');
+            });
+        });
+
+        // JavaScript to add the 'loaded' class after a delay
+        window.onload = function () {
+            setTimeout(() => {
+                document.querySelector('.hero-section').classList.add('loaded');
+            }, 500); // Delay before starting the animation
+        };
+
+        function validateForm() {
+            var name = document.getElementById('name').value;
+            var email = document.getElementById('email').value;
+            var contactNumber = document.getElementById('contactNumber').value;
+            var likedSection = document.getElementById('likedSection').value;
+            var improvementSection = document.getElementById('improvementSection').value;
+            var likedSectionComment = document.getElementById('likedSectionComment').value;
+            var improvementSectionComment = document.getElementById('improvementSectionComment').value;
+            var rating = document.getElementById('rating').value;
+
+            var nameRegex = /^[a-zA-Z ]+$/;
+            var emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+            var contactNumberRegex = /^[0-9]{10}$/;
+
+            if (!nameRegex.test(name)) {
+                alert('Invalid name');
+                return false;
+            }
+
+            if (!emailRegex.test(email)) {
+                alert('Invalid email');
+                return false;
+            }
+
+            if (!contactNumberRegex.test(contactNumber)) {
+                alert('Invalid contact number');
+                return false;
+            }
+
+            if (likedSection === '') {
+                alert('Please select a liked section');
+                return false;
+            }
+
+            if (improvementSection === '') {
+                alert('Please select an improvement section');
+                return false;
+            }
+
+            if (likedSectionComment === '') {
+                alert('Please enter a comment for the liked section');
+                return false;
+            }
+
+            if (improvementSectionComment === '') {
+                alert('Please enter a comment for the improvement section');
+                return false;
+            }
+
+            if (rating < 0 || rating > 5) {
+                alert('Invalid rating');
+                return false;
+            }
+
+            return true;
+        }
+    </script>
+
+    <!-- Bootstrap JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
