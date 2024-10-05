@@ -1,1 +1,483 @@
-hi
+body {
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+    background-color: rgb(250, 179, 190);
+    font-family: "Playwrite DE Grund", cursive;
+    font-optical-sizing: auto;
+    font-style: normal;
+}
+
+.name-font {
+    font-family: 'Dancing Script', cursive;
+    font-size: 90px;
+    color: #000;
+    margin-left: 20px;
+}
+
+h1 {
+    text-align: center;
+    color: #000;
+    margin-bottom: 30px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    font-family: 'Great Vibes', cursive;
+    margin-left: 20px;
+}
+
+h2 {
+    font-family: 'Lobster', cursive;
+    letter-spacing: 1px;
+    color: #000;
+    text-align: center;
+}
+
+h3 {
+    font-family: 'Pacifico', cursive;
+    letter-spacing: 1px;
+    color: #000;
+    text-align: center;
+}
+
+p,
+form {
+    font-size: 18px;
+    color: #000;
+    line-height: 1.6;
+}
+
+/* Navigation Styles */
+nav {
+    position: fixed;
+    width: 250px;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    background-color: #000;
+    color: #ffd700;
+    padding-top: 50px;
+    z-index: 1000;
+    transition: all 0.3s ease;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li {
+    margin: 20px 0;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+    padding: 10px;
+    display: block;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+nav ul li a:hover {
+    background-color: #ffd700;
+    color: #000;
+    transform: translateY(5px);
+}
+
+/* Hero Section */
+#hero {
+    height: auto;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 100px;
+    margin-left: 250px;
+}
+
+.hero-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    position: relative;
+}
+
+.hero-image {
+    width: 70%;
+    height: auto;
+    border-radius: 50%;
+    padding: auto;
+    margin: auto;
+    opacity: 0;
+    transition: opacity 1s ease-in-out 0.75s;
+}
+
+.hero-text {
+    margin-top: 20px;
+    opacity: 0;
+    transition: opacity 1s ease-in-out 1s;
+}
+
+.hero-text .name-font,
+.hero-text h1 {
+    font-size: 60px;
+    margin: auto;
+    position: relative;
+}
+
+.hero-section.loaded .hero-image {
+    opacity: 1;
+}
+
+.hero-section.loaded .hero-text {
+    opacity: 1;
+}
+
+/* Main Content Styles */
+.content-section {
+    min-height: 100vh;
+    padding: 60px 20px;
+    margin: 20px auto;
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.7));
+    border-radius: 5rem;
+    box-shadow: 0.1rem 0.4rem 0.5rem rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 0.5s ease;
+    width: 75%;
+    max-width: 1200px;
+    overflow-x: auto;
+    margin-left: 250px;
+    display: block;
+}
+
+.content-section.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Form and Buttons */
+.form-control {
+    background-color: #fff;
+    color: #000;
+    border: 0.1rem solid #000;
+    border-radius: 0.5rem;
+    padding: 0.75rem;
+    margin-bottom: 0.75rem;
+}
+
+.btn-primary {
+    background-color: #000;
+    border: none;
+    color: #ffd700;
+    padding: 0.75rem 1.5rem;
+    font-size: 0.9rem;
+    border-radius: 0.5rem;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: #ffd700;
+    color: #000;
+}
+
+/* Footer Styles */
+footer {
+    background-color: #000;
+    color: #fff;
+    padding: 0.75rem;
+    text-align: center;
+    position: relative;
+    width: 100%;
+    bottom: 0%;
+}
+
+footer a {
+    color: #ffd700;
+    text-decoration: none;
+    margin: 0 10px;
+    transition: color 0.3s;
+}
+
+footer a:hover {
+    color: #fff;
+}
+
+footer p {
+    color: white;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+
+    .content-section {
+        margin-left: 0;
+        width: 100%;
+    }
+
+    nav {
+        width: 100%;
+        height: auto;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        display: flex;
+        justify-content: space-between;
+        padding: 10px;
+        box-shadow: none;
+    }
+
+    nav ul {
+        display: flex;
+        justify-content: space-around;
+        flex-direction: row;
+        align-items: center;
+        margin-right: auto;
+    }
+
+    nav ul li {
+        display: inline-block;
+        margin: 0px;
+        margin-right: auto;
+    }
+
+    #hero {
+        margin-left: 0;
+    }
+
+    .content-section {
+        margin-top: 20%;
+        margin-right: auto;
+        margin-left: auto;
+        padding: 20px;
+        width: 100%;
+        align-items: center;
+        display: flex;
+        justify-content: center;
+    }
+
+    footer {
+        margin: 0;
+        width: 100%;
+    }
+}
+
+@media (max-width: 992px) {
+    nav {
+        flex-direction: column;
+        padding: auto;
+        margin-bottom: auto;
+        height: 15%;
+    }
+
+    nav ul li {
+        display: inline-block;
+        font-size: auto;
+    }
+
+    .name-font {
+        font-size: 50px;
+    }
+
+    .content-section {
+        padding: 20px;
+        margin-top: 20%;
+        width: 100%;
+    }
+
+    footer {
+        width: 100%;
+    }
+
+    .hero-text .name-font,
+    .hero-text h1 {
+        font-size: 5;
+    }
+}
+
+@media (max-width: 768px) {
+
+    .hero-text {
+margin-top: 20px;
+opacity: 0;
+transition: opacity 1s ease-in-out 1s;
+}
+
+    .hero-section img {
+        width: 90%;
+        height: auto;
+        border-radius: 50%;
+        padding: auto;
+        margin: auto;
+        transition: transform 1s ease-in-out;
+    }
+
+    .text {
+        position: absolute;
+        text-align: center;
+        margin: auto;
+    }
+
+    .text .name-font,
+    .text h1 {
+        font-size: 40px;
+        opacity: 0;
+        transition: opacity 1s ease-in-out 1.2s;
+        margin: auto;
+        position: relative;
+    }
+
+    .content-section {
+        padding: 20px;
+        margin-top: 20%;
+        width: 100%;
+    }
+
+    .qualifications-div {
+        column-count: 1;
+    }
+
+    .experience-div {
+        column-count: 1;
+    }
+}
+
+@media (max-width: 576px) {
+    .hero-section img {
+        width: 90%;
+        height: auto;
+        border-radius: 50%;
+        padding: auto;
+        margin: auto;
+        transition: transform 1s ease-in-out;
+    }
+
+    .text {
+        position: absolute;
+        text-align: center;
+        margin: auto;
+    }
+
+    .text .name-font,
+    .text h1 {
+        font-size: 30px;
+        opacity: 0;
+        transition: opacity 1s ease-in-out 1.2s;
+        margin: auto;
+        position: relative;
+    }
+
+    .content-section {
+        padding: 20px;
+        margin-top: 20%;
+        width: 100%;
+    }
+
+    .qualifications-div {
+        column-count: 1;
+    }
+
+    .experience-div {
+        column-count: 1;
+    }
+
+}
+
+.news-img {
+    text-align: center;
+}
+
+.news-img img {
+    border-radius: 15rem;
+    margin-bottom: 5%;
+}
+
+.qualifications-section{
+    padding: auto;
+}
+
+.qualifications-container {
+    max-width: 960px;
+}
+
+.qualifications-div {
+    column-count: 3;
+    column-gap: 20px;
+    background: #fff;
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.article {
+    break-inside: avoid;
+    margin-bottom: 20px;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    transition: transform 0.3s;
+}
+
+.article:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.article-content {
+    display: none;
+    margin-top: 10px;
+}
+
+/* Experience Section Styles */
+.experience-section {
+    /* Add your overall section styling here */
+    padding: auto;
+}
+
+.experience-container {
+    max-width: 960px;
+    /* Adjust the width as needed */
+}
+
+.experience-div {
+    column-count: 2;
+    /* Adjust the number of columns as needed */
+    column-gap: 20px;
+    background: #fff;
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.volunteer-item,
+.writer-item {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+.volunteer-item h4,
+.writer-item h4 {
+    font-weight: bold;
+}
+
+.volunteer-item img,
+.writer-item img {
+    width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+#about,
+#skills,
+#contact,
+#hero,
+#qualifications,
+#experience {
+    display: block;
+}
