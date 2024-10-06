@@ -250,3 +250,14 @@ img {
     display: none;
    
 }
+.vol,.writer{
+    border:2px solid #000;
+    border-radius: 2rem;
+  cursor: pointer;
+  transition: all .8s ease;
+}
+.vol:hover,.writer:hover{
+    color: #ff00ff;
+    border: 2px solid lightpink;
+
+}
