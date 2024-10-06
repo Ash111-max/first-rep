@@ -92,7 +92,7 @@ nav ul li a:hover {
 }
 
 #hero {
-    min-height: 100vh;
+    max-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -104,6 +104,7 @@ nav ul li a:hover {
     width: 85%;
     height: auto;
     border-radius: 50%;
+    margin-top: 1rem;
     transition: opacity 1s ease-in-out 0.75s;
 }
 
@@ -197,11 +198,16 @@ img {
     }
 
     .name-font {
-        font-size: 5.75rem;
+        font-size: 5rem;
+    }
+
+    #hero{
+        margin-top: auto;
     }
 
     .hero-image {
-        width: 65%;
+        margin-top: 3.5rem;
+        width: 55%;
         height: auto;
         border-radius: 50%;
         transition: opacity 1s ease-in-out 0.75s;
@@ -214,6 +220,7 @@ img {
 
     nav{
         backdrop-filter: blur(5rem);
+        padding: 0.75rem;
     }
 
     nav ul {
