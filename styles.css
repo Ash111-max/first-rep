@@ -55,7 +55,7 @@ nav {
     width: 100%;
     background-color: rgba(192, 19, 175, 0.1);
     /*gives blur effect in the backrgound*/
-    backdrop-filter: blur(0rem);
+    backdrop-filter: blur(5rem);
     /*changed from 5rem to 1rem*/
     padding: 1rem 1rem;
     top: 0;
@@ -76,7 +76,7 @@ nav ul {
 }
 
 nav ul li {
-    margin-right: 0.2rem;
+    margin-right: 0.1rem;
     /*changed from 1.5 to 1*/
     width: auto;
 }
@@ -87,7 +87,7 @@ nav ul li a {
     color: #000000;
     text-decoration: none;
     font-size: .5rem;
-    padding: 0.75rem;
+    padding: 0.25rem;
     display: block;
     transition: background-color 0.3s, transform 0.3s;
 }
@@ -202,17 +202,21 @@ img {
 
 /*for tablets*/
 @media (min-width: 768px) {
-    /* .welcome {
+    .welcome {
         font-size: 1.5rem;
         display: block !important;
         color: #ff00ff;
-    } */
+    }
     /*removed the above as it was getting displayed over the nav bar*/
 
     .name-font {
         font-size: 3.75rem;
     }
 
+    nav{
+        backdrop-filter: blur(5rem);
+    /*changed from 0rem to 5rem*/
+    }
 
     nav ul {
         flex-direction: row;
@@ -281,17 +285,27 @@ img {
         flex-direction: column;
         justify-content: flex-start;
         padding-top: 3rem;
+        backdrop-filter: blur(0rem);
+        /*changed from 5rem to 1rem*/
+        
     }
 
     nav ul {
         flex-direction: column;
         align-items: flex-start;
+        
     }
 
     nav ul li {
         border-bottom: 1px solid black;
         /* for slight underline */
+        
 
+    }
+
+    nav ul li a{
+        font-size: 1rem;
+        margin-bottom: 0.72rem;
     }
 
     #hero {
