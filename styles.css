@@ -9,7 +9,7 @@ body {
 .name-font {
     font-family: "Dancing Script", cursive !important;
     font-weight: light;
-    font-size: 2rem;
+    font-size: 3rem;
     margin-bottom: 2rem;
     color: #000; /* Black color for high contrast */
 
@@ -101,16 +101,20 @@ nav ul li a:hover {
 }
 
 .hero-image {
-    width: 40%;
+    width: 85%;
     height: auto;
     border-radius: 50%;
     transition: opacity 1s ease-in-out 0.75s;
 }
 
 .hero-text {
-    margin-top: 1.25rem;
+    margin-top: 1rem;
     opacity: 0;
     transition: opacity 1s ease-in-out 1s;
+}
+
+.hero-text h1{
+    font-size: 2rem;
 }
 
 .hero-section.loaded .hero-image,
@@ -193,8 +197,20 @@ img {
     }
 
     .name-font {
-        font-size: 3.75rem;
+        font-size: 5.75rem;
     }
+
+    .hero-image {
+        width: 65%;
+        height: auto;
+        border-radius: 50%;
+        transition: opacity 1s ease-in-out 0.75s;
+    }
+
+    .hero-text h1{
+        font-size: 4rem;
+    }
+    
 
     nav{
         backdrop-filter: blur(5rem);
@@ -255,6 +271,20 @@ img {
     .welcome {
         font-size: 3rem;
     }
+
+    .hero-image {
+        width: 40%;
+        height: auto;
+        border-radius: 50%;
+        transition: opacity 1s ease-in-out 0.75s;
+    }
+
+    .hero-text {
+        margin-top: 1.25rem;
+        opacity: 0;
+        transition: opacity 1s ease-in-out 1s;
+    }
+
 
     nav {
         width: 15rem;
@@ -325,7 +355,6 @@ img {
     text-align: left;
     width: 20%;
     display: none;
-
 }
 
 .vol,
