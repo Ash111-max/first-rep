@@ -51,7 +51,8 @@
     <section id="hero">
         <div class="hero-section">
             <div class="my-image">
-                <img src="images/astleImage.jpg" alt="Astle's Image" class="hero-image" />
+                <img src="images/ashImg.jpg" alt="Astle's Image" class="hero-image">
+                <!-- <img src="images/astleImage.jpg" alt="Astle's Image" class="hero-image" /> -->
             </div>
 
             <div class="text hero-text">
@@ -485,7 +486,8 @@
             var rating = document.getElementById("rating").value;
 
             var nameRegex = /^[a-zA-Z ]+$/;
-            var emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+            // var emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+            var emailRegex = /^(?!\d)[a-zA-Z]+[a-zA-Z0-9._%+-]*@[a-zA-Z]+\.[a-zA-Z]{2,}$/
             var contactNumberRegex = /^[0-9]{10}$/;
 
             if (!nameRegex.test(name)) {
