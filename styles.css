@@ -53,16 +53,16 @@ form {
 nav {
     position: fixed;
     width: 100%;
-    background-color: rgba(192, 19, 175, 0.1); 
+    background-color: rgba(192, 19, 175, 0.1);
     /*gives blur effect in the backrgound*/
-    backdrop-filter: blur(0rem); 
+    backdrop-filter: blur(0rem);
     /*changed from 5rem to 1rem*/
     padding: 1rem 1rem;
     top: 0;
     display: flex;
     border-bottom: 1px solid #909090;
     z-index: 1000;
-    
+
 }
 
 nav ul {
@@ -76,7 +76,8 @@ nav ul {
 }
 
 nav ul li {
-    margin-right: 0.2rem; /*changed from 1.5 to 1*/
+    margin-right: 0.2rem;
+    /*changed from 1.5 to 1*/
     width: auto;
 }
 
@@ -179,12 +180,12 @@ img {
 }
 
 /*added this*/
-.article-content{
+.article-content {
     display: none;
 }
 
 /*added this*/
-.article{
+.article {
     break-inside: avoid;
     margin-bottom: 20px;
     padding: 15px;
@@ -194,9 +195,9 @@ img {
 }
 
 /*added this*/
-.article:hover{
+.article:hover {
     transform: translateY(-5px);
-    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 /*for tablets*/
@@ -206,7 +207,7 @@ img {
         display: block !important;
         color: #ff00ff;
     } */
-     /*removed the above as it was getting displayed over the nav bar*/
+    /*removed the above as it was getting displayed over the nav bar*/
 
     .name-font {
         font-size: 3.75rem;
@@ -219,13 +220,15 @@ img {
     }
 
     nav ul li {
-        margin-right: 1rem; /*changed from 1.5 to 1*/
+        margin-right: 1rem;
+        /*changed from 1.5 to 1*/
         width: auto;
 
     }
 
     nav ul li a {
-        font-size: 0.75rem; /*chaneged from 1rem to o.75rem*/
+        font-size: 0.75rem;
+        /*chaneged from 1rem to o.75rem*/
 
     }
 
@@ -239,7 +242,23 @@ img {
     }
 
     /*added this to make the boxes in columns by css columns/grids*/
-    .qualifications-div{
+    .qualifications-div {
+        column-count: 3;
+        column-gap: 0.5rem;
+        border-radius: 15px;
+        padding: 20px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .experience-div {
+        column-count: 2;
+        column-gap: 0.5rem;
+        border-radius: 15px;
+        padding: 20px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .projects-div {
         column-count: 3;
         column-gap: 0.5rem;
         border-radius: 15px;
@@ -285,7 +304,23 @@ img {
         margin-left: 19rem;
     }
 
-    .qualifications-div{
+    .qualifications-div {
+        column-count: 3;
+        column-gap: 0.5rem;
+        border-radius: 15px;
+        padding: 20px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .experience-div {
+        column-count: 2;
+        column-gap: 0.5rem;
+        border-radius: 15px;
+        padding: 20px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .projects-div {
         column-count: 3;
         column-gap: 0.5rem;
         border-radius: 15px;
