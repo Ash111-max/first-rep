@@ -370,6 +370,7 @@ img {
     border-radius: 2rem;
     cursor: pointer;
     transition: all .8s ease;
+    background-color: #FFD700;
 }
 
 .vol:hover,
