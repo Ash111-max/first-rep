@@ -2,7 +2,7 @@ body {
     margin: 0;
     padding: 0;
     scroll-behavior: smooth;
-    background-color: rgb(250, 179, 190);
+    background-color: #FFD700; /* Soft goldenish-yellow color */
     font-family: "Playwrite DE Grund", cursive;
 }
 
@@ -11,13 +11,13 @@ body {
     font-weight: light;
     font-size: 2rem;
     margin-bottom: 2rem;
-    color: #000;
+    color: #000; /* Black color for high contrast */
 
 }
 
 h1 {
     text-align: center;
-    color: #000;
+    color: #000; /* Black color for high contrast */
     margin-top: 2rem;
     margin-bottom: 1.5rem;
 
@@ -29,7 +29,7 @@ h1 {
 h2 {
     font-family: 'Lobster', cursive;
     letter-spacing: 0.05rem;
-    color: #000;
+    color: #000; /* Black color for high contrast */
     text-align: center;
     font-size: 1.8rem;
 }
@@ -37,7 +37,7 @@ h2 {
 h3 {
     font-family: 'Pacifico', cursive;
     letter-spacing: 0.05rem;
-    color: #000;
+    color: #000; /* Black color for high contrast */
     text-align: center;
     font-size: 1.6rem;
 }
@@ -45,18 +45,14 @@ h3 {
 p,
 form {
     font-size: 1rem;
-    color: #000;
+    color: #333; /* Dark gray color for high contrast */
     line-height: 1.6;
 }
-
 
 nav {
     position: fixed;
     width: 100%;
-    background-color: rgba(192, 19, 175, 0.1);
-    /*gives blur effect in the backrgound*/
-    backdrop-filter: blur(5rem);
-    /*changed from 5rem to 1rem*/
+    background-color: #000; /* Solid black color for sleek look */
     padding: 1rem 1rem;
     top: 0;
     display: flex;
@@ -77,14 +73,11 @@ nav ul {
 
 nav ul li {
     margin-right: 0.1rem;
-    /*changed from 1.5 to 1*/
     width: auto;
 }
 
-
-
 nav ul li a {
-    color: #000000;
+    color: #fff; /* White color for high contrast */
     text-decoration: none;
     font-size: .5rem;
     padding: 0.25rem;
@@ -93,11 +86,10 @@ nav ul li a {
 }
 
 nav ul li a:hover {
-    background-color: #000000;
-    color: rgb(250, 179, 190);
+    background-color: #333; /* Dark gray color for high contrast */
+    color: #FFD700; /* Soft goldenish-yellow color */
     transform: translateY(0.3rem);
 }
-
 
 #hero {
     min-height: 100vh;
@@ -109,7 +101,7 @@ nav ul li a:hover {
 }
 
 .hero-image {
-    width: 80%;
+    width: 40%;
     height: auto;
     border-radius: 50%;
     transition: opacity 1s ease-in-out 0.75s;
@@ -126,12 +118,11 @@ nav ul li a:hover {
     opacity: 1;
 }
 
-
 .content-section {
     min-height: 100vh;
     padding: 1.25rem;
     margin-top: 10%;
-    background: rgba(255, 255, 255, 0.7);
+    background: #F5F5DC; /* Cream color for content section */
     border-radius: 1rem;
     box-shadow: 0.1rem 0.4rem 0.5rem rgba(0, 0, 0, 0.1);
     opacity: 0;
@@ -148,43 +139,37 @@ nav ul li a:hover {
     transform: translateY(0);
 }
 
-
 footer {
-    background-color: #000;
-    color: #fff;
+    background-color: #000; /* Solid black color for sleek look */
+    color: #fff; /* White color for high contrast */
     padding: 0.75rem;
     text-align: center;
     position: relative;
 }
 
 footer a {
-    color: #ffd700;
+    color: #FFD700; /* Soft goldenish-yellow color */
     text-decoration: none;
     margin: 0 0.625rem;
     transition: color 0.3s;
 }
 
 footer a:hover {
-    color: #fff;
+    color: #fff; /* White color for high contrast */
 }
-
 
 img {
     max-width: 100%;
     height: auto;
     border-radius: 0.5rem;
     display: block;
-    /*added this*/
     margin: 0 auto;
-    /*added this*/
 }
 
-/*added this*/
 .article-content {
     display: none;
 }
 
-/*added this*/
 .article {
     break-inside: avoid;
     margin-bottom: 20px;
@@ -194,7 +179,6 @@ img {
     transition: transform 0.3s;
 }
 
-/*added this*/
 .article:hover {
     transform: translateY(-5px);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
@@ -207,7 +191,6 @@ img {
         display: block !important;
         color: #ff00ff;
     }
-    /*removed the above as it was getting displayed over the nav bar*/
 
     .name-font {
         font-size: 3.75rem;
@@ -215,7 +198,6 @@ img {
 
     nav{
         backdrop-filter: blur(5rem);
-    /*changed from 0rem to 5rem*/
     }
 
     nav ul {
@@ -225,14 +207,12 @@ img {
 
     nav ul li {
         margin-right: 1rem;
-        /*changed from 1.5 to 1*/
         width: auto;
 
     }
 
     nav ul li a {
         font-size: 0.75rem;
-        /*chaneged from 1rem to o.75rem*/
 
     }
 
@@ -245,7 +225,6 @@ img {
         padding: 1.5rem;
     }
 
-    /*added this to make the boxes in columns by css columns/grids*/
     .qualifications-div {
         column-count: 3;
         column-gap: 0.5rem;
@@ -286,7 +265,6 @@ img {
         justify-content: flex-start;
         padding-top: 3rem;
         backdrop-filter: blur(0rem);
-        /*changed from 5rem to 1rem*/
         
     }
 
