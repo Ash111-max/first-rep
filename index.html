@@ -487,7 +487,8 @@
 
             var nameRegex = /^[a-zA-Z ]{2,}$/;
             // var emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-            var emailRegex = /^(?!\d)[a-zA-Z]+[a-zA-Z0-9._%+-]*@[a-zA-Z]+\.[a-zA-Z]{2,}$/
+            // var emailRegex = /^(?!\d)[a-zA-Z]+[a-zA-Z0-9._%+-]*@[a-zA-Z]+\.[a-zA-Z]{2,}$/
+            var emailRegex = /^(?=[a-zA-Z])[a-zA-Z0-9._%+-]{1,64}@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/
             var contactNumberRegex = /^[0-9]{10}$/;
 
             if (!nameRegex.test(name)) {
